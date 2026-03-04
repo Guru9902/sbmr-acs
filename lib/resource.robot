@@ -1,4 +1,4 @@
-# Copyright (c) 2023-2024, Arm Limited or its affiliates. All rights reserved.
+# Copyright (c) 2023-2026, Arm Limited or its affiliates. All rights reserved.
 # SPDX-License-Identifier : Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -149,6 +149,19 @@ ${M1_JTAG_1_2_Interface_Declaration}     0
 ${M2_JTAG_1_2_Interface_Declaration}     0
 ${M2_IO_1_NCSI_Interface_Declaration}    0
 ${M2_RAS_1_2_Function_Declaration}       0
+${M3_SB_1_9_Interface_Declaration}       0
+${M3_JTAG_1_2_Interface_Declaration}     0
+${M3_IO_1_2_Interface_Declaration}       0
+${M3_OOB_1_Interface_Declaration}        0
+${M3_SPDM_1_2_Interface_Declaration}     0
+${M3_RAS_1_Function_Declaration}         0
+${M4_SB_1_Interface_Declaration}         0
+${M4_IO_1_3_Interface_Declaration}       0
+${M5_IB_1_2_Interface_Declaration}       0
+${M5_SB_1_Interface_Declaration}         0
+${M5_IO_1_Interface_Declaration}         0
+${M5_OOB_1_Interface_Declaration}        0
+${M5_HS_1_2_Interface_Declaration}       0
 
 *** Keywords ***
 Get Inventory Schema

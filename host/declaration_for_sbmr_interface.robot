@@ -1,4 +1,4 @@
-# Copyright (c) 2023, Arm Limited or its affiliates. All rights reserved.
+# Copyright (c) 2023-2026, Arm Limited or its affiliates. All rights reserved.
 # SPDX-License-Identifier : Apache-2.0
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,39 +24,126 @@ Resource         ../lib/resource.robot
 Declaration For BMC M1_JTAG Interface Support
     [Documentation]  Declaration for BMC M1_JTAG interface support
     [Tags]  M1_JTAG_1_2_Interface_Declaration
-
-    Run Keyword If  '${M1_JTAG_1_2_Interface_Declaration}' == '${1}'
-    ...    Log  Declaration : M1_JTAG_1_2 rule supports
-    ...  ELSE
-    ...    Fail  M1_JTAG_1_2 rule doesn't support
+    [Template]  Verify Declaration
+    ${M1_JTAG_1_2_Interface_Declaration}  M1_JTAG_1_2
 
 
 Declaration For BMC M2_JTAG Interface Support
     [Documentation]  Declaration for BMC M2_JTAG interface support
     [Tags]  M2_JTAG_1_2_Interface_Declaration
-
-    Run Keyword If  '${M2_JTAG_1_2_Interface_Declaration}' == '${1}'
-    ...    Log  Declaration : M2_JTAG_1_2 rule supports
-    ...  ELSE
-    ...    Fail  M2_JTAG_1_2 rule doesn't support
+    [Template]  Verify Declaration
+    ${M2_JTAG_1_2_Interface_Declaration}  M2_JTAG_1_2
 
 
 Declaration For BMC M2_IO_1 NC-SI Interface Support
     [Documentation]  Declaration for BMC M2_IO_1 NS-CI interface support
     [Tags]  M2_IO_1_NCSI_Interface_Declaration
-
-    Run Keyword If  '${M2_IO_1_NCSI_Interface_Declaration}' == '${1}'
-    ...    Log  Declaration : M2_IO_1 rule supports
-    ...  ELSE
-    ...    Fail  M2_IO_1 rule doesn't support
+    [Template]  Verify Declaration
+    ${M2_IO_1_NCSI_Interface_Declaration}  M2_IO_1
 
 
 Declaration For BMC M2_RAS Functionality Support
     [Documentation]  Declaration for BMC M2_RAS functionality support
     [Tags]  M2_RAS_1_2_Function_Declaration
+    [Template]  Verify Declaration
+    ${M2_RAS_1_2_Function_Declaration}  M2_RAS_1_2
 
-    Run Keyword If  '${M2_RAS_1_2_Function_Declaration}' == '${1}'
-    ...    Log  Declaration : M2_RAS_1_2 rule supports
+
+Declaration For BMC M3_SB Interface Support
+    [Documentation]  Declaration for BMC M3_SB interface support
+    [Tags]  M3_SB_1_9_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M3_SB_1_9_Interface_Declaration}  M3_SB_1_9
+
+
+Declaration For BMC M3_JTAG Interface Support
+    [Documentation]  Declaration for BMC M3_JTAG interface support
+    [Tags]  M3_JTAG_1_2_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M3_JTAG_1_2_Interface_Declaration}  M3_JTAG_1_2
+
+
+Declaration For BMC M3_IO Interface Support
+    [Documentation]  Declaration for BMC M3_IO interface support
+    [Tags]  M3_IO_1_2_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M3_IO_1_2_Interface_Declaration}  M3_IO_1_2
+
+
+Declaration For BMC M3_OOB Interface Support
+    [Documentation]  Declaration for BMC M3_OOB interface support
+    [Tags]  M3_OOB_1_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M3_OOB_1_Interface_Declaration}  M3_OOB_1
+
+
+Declaration For BMC M3_SPDM Interface Support
+    [Documentation]  Declaration for BMC M3_SPDM interface support
+    [Tags]  M3_SPDM_1_2_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M3_SPDM_1_2_Interface_Declaration}  M3_SPDM_1_2
+
+
+Declaration For BMC M3_RAS Functionality Support
+    [Documentation]  Declaration for BMC M3_RAS functionality support
+    [Tags]  M3_RAS_1_Function_Declaration
+    [Template]  Verify Declaration
+    ${M3_RAS_1_Function_Declaration}  M3_RAS_1
+
+
+Declaration For BMC M4_SB Interface Support
+    [Documentation]  Declaration for BMC M4_SB interface support
+    [Tags]  M4_SB_1_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M4_SB_1_Interface_Declaration}  M4_SB_1
+
+
+Declaration For BMC M4_IO Interface Support
+    [Documentation]  Declaration for BMC M4_IO interface support
+    [Tags]  M4_IO_1_3_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M4_IO_1_3_Interface_Declaration}  M4_IO_1_3
+
+
+Declaration For BMC M5_IB Interface Support
+    [Documentation]  Declaration for BMC M5_IB interface support
+    [Tags]  M5_IB_1_2_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M5_IB_1_2_Interface_Declaration}  M5_IB_1_2
+
+
+Declaration For BMC M5_SB Interface Support
+    [Documentation]  Declaration for BMC M5_SB interface support
+    [Tags]  M5_SB_1_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M5_SB_1_Interface_Declaration}  M5_SB_1
+
+
+Declaration For BMC M5_IO Interface Support
+    [Documentation]  Declaration for BMC M5_IO interface support
+    [Tags]  M5_IO_1_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M5_IO_1_Interface_Declaration}  M5_IO_1
+
+
+Declaration For BMC M5_OOB Interface Support
+    [Documentation]  Declaration for BMC M5_OOB interface support
+    [Tags]  M5_OOB_1_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M5_OOB_1_Interface_Declaration}  M5_OOB_1
+
+
+Declaration For BMC M5_HS Interface Support
+    [Documentation]  Declaration for BMC M5_HS interface support
+    [Tags]  M5_HS_1_2_Interface_Declaration
+    [Template]  Verify Declaration
+    ${M5_HS_1_2_Interface_Declaration}  M5_HS_1_2
+
+
+*** Keywords ***
+Verify Declaration
+    [Arguments]  ${declaration_var}  ${rule_id}
+    Run Keyword If  '${declaration_var}' == '${1}'
+    ...    Log  Declaration : ${rule_id} rule supports
     ...  ELSE
-    ...    Fail  M2_RAS_1_2 rule doesn't support
-
+    ...    Fail  ${rule_id} rule doesn't support
